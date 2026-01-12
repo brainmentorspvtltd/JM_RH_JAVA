@@ -5,6 +5,7 @@ public class D {
         // String c = "Welcome";
         // a = "Bye Bye";
         StringBuilder sb = new StringBuilder();
+        // sb.ensureCapacity(50);
         System.out.println(sb.capacity());
         System.out.println(sb.length());
         sb.append("Amit ghdfkjghdfkjlgkjhdgjhdlfkhjgkldfhgklhdfklghdfkghkdfhgkjdfhkghdfkl");
