@@ -1,0 +1,19 @@
+class Solution {
+    public int findNumbers(int[] nums) {
+        int totalEven = 0;
+        // Traverse the Array element by element
+        for(int i = 0; i<nums.length; i++){
+            int n = nums[i]; // store the current element in n
+            int count = 0 ; // to count the digits
+            while(n!=0){ // loop until number is !=0
+                n= n/10; // make number small
+                count++; // count the digits
+            }
+            if(count%2==0){
+                // checking even digit count
+                totalEven++;
+            }
+        }
+        return totalEven;
+    }
+}
