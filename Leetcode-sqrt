@@ -1,0 +1,12 @@
+class Solution {
+    public int mySqrt(int x) {
+        int odd = 1;
+        int count = 0;
+        while(x>=odd){
+        x = x - odd;
+        odd = odd + 2;
+        count++;
+        }
+        return count;
+    }
+}
