@@ -1,0 +1,26 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+        //  int n = nums.length;
+        // int sum = (n * (n+1))/2; // TC O(1)
+        // for(int n1 : nums){
+        //     sum = sum - n1;
+        // }
+        // return sum;
+        // N Natural Number Sum TC O(N)
+        // for(int i = 1; i<=n; i++){
+        //     sum = sum + i;
+        // }
+        // XOR - Approach - 2
+        int n = nums.length;
+        int xor = 0;
+        // TC O(N)
+        for(int i = 1; i<=n; i++){
+            xor = xor ^ i;
+        }
+        // TC O(N)
+        for(int n1 : nums){
+            xor = xor ^ n1;
+        }
+        return xor;
+    }
+}
