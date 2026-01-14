@@ -1,0 +1,18 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int lowestPriceEver = prices[0];
+        int maxProfit = 0;
+        // Linear TC O(N)
+        // Enhance for loop
+        for(int price : prices){
+            // if(price<lowestPriceEver){
+            //     lowestPriceEver = price;
+            // }
+            lowestPriceEver = Math.min(price, lowestPriceEver);
+            int profit = price - lowestPriceEver;
+            maxProfit = Math.max(maxProfit, profit);
+        }
+        return maxProfit;
+        
+    }
+}
