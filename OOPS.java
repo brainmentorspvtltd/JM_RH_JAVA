@@ -1,5 +1,17 @@
+// @Table
+// class Emp{
+//     @Id
+//     int empid;
+// }
 // PascalCase + Noun + Custom Type
-class Customer extends Object {
+class Person extends Object {
+    @Override
+    public String toString() {
+        return "Person toString....";
+    }
+}
+
+class Customer extends Person {
     // Members
     int id;
     String name;
@@ -14,6 +26,7 @@ class Customer extends Object {
     // }
     @Override
     public String toString() {
+        super.toString();
         return "Id " + id + " Name " + name + " Balance " + balance + " Phone " + phone;
     }
 }
