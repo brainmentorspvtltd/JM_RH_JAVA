@@ -1,0 +1,15 @@
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int n : nums){
+            if(map.containsKey(n)){
+                return true; 
+            }
+            map.put(n , n);
+            //if(map.get(n)!=null){
+
+            }
+            return false;
+        }
+    }
+}
