@@ -1,0 +1,9 @@
+create database bookingdb;
+
+use bookingdb;
+
+create table users(userid varchar(30), password varchar(30));
+
+insert into users values('amit', 'brainmentors');
+
+select * from users;
