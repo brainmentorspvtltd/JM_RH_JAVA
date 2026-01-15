@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DB {
-    public Connection createConnection() throws ClassNotFoundException, SQLException {
+    private DB() {
+    }
+
+    public static Connection createConnection() throws ClassNotFoundException, SQLException {
         // Step - 1 Load a Driver Class
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookingdb", "root",
@@ -16,8 +19,9 @@ public class DB {
         return connection;
     }
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        DB db = new DB();
-        db.createConnection();
-    }
+    // public static void main(String[] args) throws ClassNotFoundException,
+    // SQLException {
+    // DB db = new DB();
+    // db.createConnection();
+    // }
 }

@@ -5,8 +5,12 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import com.brainmentors.dao.UserDAO;
+import com.brainmentors.dto.UserDTO;
 
 public class Login extends JFrame {
     JTextField userid;
@@ -43,6 +47,16 @@ public class Login extends JFrame {
     void doLogin() {
         String uid = userid.getText();
         char[] pwd = password.getPassword();
+        UserDTO userDTO = new UserDTO();
+        userDTO.setUserid(uid);
+        userDTO.setPassword(new String(pwd));
+        UserDAO userDAO = new UserDAO();
+        try {
+            String result = userDAO.auth(userDTO);
+            JOptionPane.showMessageDialog(this, result);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         // String pw =new String(pwd);
         // System.out.println(pw);
     }
